@@ -5,5 +5,6 @@
     </head>
     <body>
         This is Test Page!
+        <? phpinfo(); ?>
     </body>
 </html>
