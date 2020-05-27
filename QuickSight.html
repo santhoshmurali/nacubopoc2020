@@ -15,37 +15,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
-<script>  
-  function validateform(){  
-  var name=document.myform.usename.value;  
-  var password=document.myform.password.value;  
- 
-  if (name==null || name==""){  
-    alert("Name can't be blank");  
-    return false;  
-  }else if(password.length<6){  
-    alert("Password must be at least 6 characters long.");  
-    return false;  
-    }
-  else if (name=="demouser" && password=="demopassword")  
-  {
-    alert("Welcome Demo user!");
-    window.location.href = "QuickSight.html";
-  }
-  else
-  {
-    alert("Invalid Username and Password");
-    return false;
-  }
-  }
-
-  function unpw(){
-    alert("demouser/demopassword");
-    return false;
-  }  
-
-
-  </script> 
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -75,27 +44,16 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <article>
-      <h3 class="heading">Nacubo 2020 Survey</h3>
-      <p>Please Enter your User Name Password to access your reports. </p>
-      <form name="myform" method="post" action="abc.jsp">  
-      User Name <br/>
-      <input type="Text" name="usename" style="border: 0ch;color: black;"/>
-      <br/>
-      Password <br/>
-      <input type="password" value="" name = "password" style="border: 0ch;color: black;"/>
-      </form>
-      <p onclick="unpw()">Click here to know username and password. </p>
-      <footer>
-        <ul class="nospace inline pushright">
-          <li><a class="btn" href="#" onclick="redirect()">Login</a></li>
-          <li><a class="btn inverse" href="#">Forgot</a></li>
-        </ul>
-      </footer>
+      <h3 class="heading">Quicksight report comes here</h3>
     </article>
     <!-- ################################################################################################ -->
   </div>
   <!-- ################################################################################################ -->
 </div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <div class="wrapper row1">
   <section id="ctdetails" class="hoc clear"> 
     <!-- ################################################################################################ -->
@@ -116,7 +74,6 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
   </section>
 </div>
-
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
