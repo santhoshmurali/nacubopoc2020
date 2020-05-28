@@ -14,7 +14,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-</head>
 <script>  
   function validateform(){  
   var name=document.myform.usename.value;  
@@ -45,7 +44,10 @@ Licence URI: https://www.os-templates.com/template-terms
   }  
 
 
+
   </script> 
+</head>
+
 <body id="top">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -87,7 +89,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <p onclick="unpw()">Click here to know username and password. </p>
       <footer>
         <ul class="nospace inline pushright">
-          <li><a class="btn" href="#" onclick="redirect()">Login</a></li>
+          <li><a class="btn" href="#" onclick="validateform()">Login</a></li>
           <li><a class="btn inverse" href="#">Forgot</a></li>
         </ul>
       </footer>
