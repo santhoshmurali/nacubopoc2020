@@ -15,17 +15,39 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.685.0.min.js"></script>
+<script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.0.7/dist/quicksight-embedding-js-sdk.min.js"></script> 
+<script src="scripts/aws-sdk-2.685.0.min.js"></script>
+<script src="scripts/quicksight-embedding-js-sdk.min.js"></script>
 <script>
   function loading()
   {
     var uri = "https://us-east-2.quicksight.aws.amazon.com/embed/ce5732610146416ca68c9064a02343bf/dashboards/99d88e73-2057-402b-b6a4-22ee97284778?isauthcode=true&identityprovider=quicksight&code=AYABeFv85UaK7DlaAEWG1hfjrnQAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTI6MjU5MzgxNDUwNDA2OmtleS8xZGQ4NmNiNy01MmE3LTQxMTItYTEyOC0zNTYzMzU0ODViZTkAuAECAQB4fn00NTgM2C_LHJYxsyNx1SjomNWwWVp51GMnAbdj9cMBho9s51_Wceg0eSdRMvGYLQAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDMtTGXq6Zhdw1J8v3QIBEIA7awJkjlsOeC2bl8aXa2c8xf1h14DhDVw-TDnHF8wPwrSSSY23UlEgGyGhtOIAFnRke91z-fWN1ji_IxwCAAAAAAwAABAAAAAAAAAAAAAAAAAANdR7Ch49acKRYZJLTdFMP_____8AAAABAAAAAAAAAAAAAAABAAAAm-aRqHsunpMQmUYUU8ALQzx5Y64-E6Xbm7bBLu2XI8GaNkQqVTb_BKxsyxb0jnXWvxSyzgdPxfbKBNhqg_3fUCDJfG7iqQJGuksq2t5nqthgWCQ4GR8vA3-aMG3F0-VI3BbM4IkgUm9lDuM6S1xNFB4MJDc1nN9za29Ry32d_GqABOD_WJusKBmKFO8xtRr-nw-Vi8mMFXOaOpt3w7My0kPJXvgaoJhYznYoHQ%3D%3D";
     document.getElementById("innerHTMLHaha").innerHTML = "<iframe src='" + uri + "' style='width:100%;height:600px;'></iframe>";
   }
+  embedDashboard()
+  {
+    var containerDiv = document.getElementById("dashboardContainer");
+    var params = {
+        AwsAccountId: "387973411303",
+        DashboardId: "99d88e73-2057-402b-b6a4-22ee97284778",
+        IdentityType: "IAM",
+        ResetDisabled: true,
+        SessionLifetimeInMinutes: 15,
+        UndoRedoDisabled: true,
+        "region":"us-east-1"
+    };
+    quicksight.getDashboardEmbedUrl(params,function (err, data) {
+        if (!err) {
+            alert(data);
+        } else {
+          console.log(err);
+          }
 
+  }
   
 </script>
 </head>
-<body id="top" onload="loading()">
+<body id="top" onload="embedDashboard()">
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -55,7 +77,9 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     
       <h5>Quicksight report comes here</h5>
-      <div id="innerHTMLHaha" style="width: 100%;height:100%;"></div>
+      <div id="innerHTMLHaha" style="width: 100%;height:100%;">
+        <div id="dashboardContainer"></div>
+      </div>
     
     <!-- ################################################################################################ -->
   </div>
