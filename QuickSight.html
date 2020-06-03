@@ -32,15 +32,13 @@ Licence URI: https://www.os-templates.com/template-terms
         DashboardId: "99d88e73-2057-402b-b6a4-22ee97284778",
         IdentityType: "IAM",
         ResetDisabled: true,
-        SessionLifetimeInMinutes: 15,
-        UndoRedoDisabled: true,
-        "region":"us-east-1"
+        SessionLifetimeInMinutes: 15
     };
     quicksight.getDashboardEmbedUrl(params,function (err, data) {
         if (!err) {
             alert(data);
         } else {
-          console.log(err);
+          alert(err);
           }
 
   }
