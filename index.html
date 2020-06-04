@@ -24,9 +24,9 @@ Licence URI: https://www.os-templates.com/template-terms
       if (validateform()==true)
       {
       $("#MainContent").hide();
-      var url = document.myform.dashboardurl.value;
+      var url = "nqs.html";
       $("#dashboardContainer").show();
-      document.getElementById("innerHTMLDB").innerHTML = "<iframe src='" + url + "' style='width:1080px;height:900px;'></iframe>";
+      document.getElementById("innerHTMLDB").innerHTML = "<iframe src='" + url + "' style='width:1100px;height:520px;'></iframe>";
       }
       
     }
@@ -68,8 +68,8 @@ Licence URI: https://www.os-templates.com/template-terms
   </script> 
 </head>
 
-<body id="top" >
-<div class="bgded overlay padtop" style="background-image:url('images/demo/backgrounds/01.png'); vertical-align: top; padding-top: -100px;"> 
+<body id="top"  >
+<div class="bgded overlay padtop" style="background-image:url('images/demo/backgrounds/01.png'); "> 
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <h1><a href="index.html">Nacubo</a></h1>
@@ -92,10 +92,6 @@ Licence URI: https://www.os-templates.com/template-terms
       Password <br/>
       <input type="password" value="" name = "password" style="border: 0ch;color: black;"/>
 
-      <br/>
-      Dashboard url Generated feom AWS-CLI: <br/>
-      <input type="Text" value="" name = "dashboardurl" id ="dashboardurl" style="border: 0ch;color: black;"/>
-
       </form>
       <p onclick="unpw()">Click here to know username and password. </p>
       <footer>
@@ -107,7 +103,7 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
     <div id = "dashboardContainer">
     <h5>Quicksight report comes here</h5>
-    <div id="innerHTMLDB" style="width:1080px;height:900px;">
+    <div id="innerHTMLDB" style="width:1100px;height:600px;">
      
     </div>
   </div>
