@@ -14,11 +14,30 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>  
+
+  $(document).ready(function(){
+    $("#dashboardContainer").hide();
+    $("#btnDashbard").click(function()
+    {
+      if (validateform()==true)
+      {
+      $("#MainContent").hide();
+      var url = document.myform.dashboardurl.value;
+      $("#dashboardContainer").show();
+      document.getElementById("innerHTMLDB").innerHTML = "<iframe src='" + url + "' style='width:1080px;height:900px;'></iframe>";
+      }
+      
+    }
+    )
+  });
+
   function validateform(){  
   var name=document.myform.usename.value;  
   var password=document.myform.password.value;  
- 
+  var url = document.myform.dashboardurl.value;
+
   if (name==null || name==""){  
     alert("Name can't be blank");  
     return false;  
@@ -26,14 +45,13 @@ Licence URI: https://www.os-templates.com/template-terms
     alert("Password must be at least 6 characters long.");  
     return false;  
     }
-  else if (name=="demouser" && password=="demopassword")  
+  else if (name=="demouser" && password=="demopassword" && url != "")  
   {
-    alert("Welcome Demo user!");
-    window.location.href = "QuickSight.html";
+    return true;
   }
   else
   {
-    alert("Invalid Username and Password");
+    alert("Invalid Username and Password / Blank Dashboard URL");
     return false;
   }
   }
@@ -45,38 +63,26 @@ Licence URI: https://www.os-templates.com/template-terms
 
 
 
+  
+
   </script> 
 </head>
 
-<body id="top">
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Top Background Image Wrapper -->
-<div class="bgded overlay padtop" style="background-image:url('images/demo/backgrounds/01.png');"> 
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
+<body id="top" onload="initialize()">
+<div class="bgded overlay padtop" style="background-image:url('images/demo/backgrounds/01.png'); vertical-align: top; padding-top: -100px;"> 
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
-      <!-- ################################################################################################ -->
       <h1><a href="index.html">Nacubo</a></h1>
-      <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
-      <!-- ################################################################################################ -->
       <ul class="clear">
         <li class="active"><a href="index.html">Home</a></li>
       </ul>
-      <!-- ################################################################################################ -->
     </nav>
   </header>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div id="pageintro" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <article>
+
+  <div id="pageintro" class="hoc clear "> 
+      <div id="MainContent">
       <h3 class="heading">Nacubo 2020 Survey</h3>
       <p>Please Enter your User Name Password to access your reports. </p>
       <form name="myform" method="post" action="abc.jsp">  
@@ -85,22 +91,31 @@ Licence URI: https://www.os-templates.com/template-terms
       <br/>
       Password <br/>
       <input type="password" value="" name = "password" style="border: 0ch;color: black;"/>
+
+      <br/>
+      Dashboard url Generated feom AWS-CLI: <br/>
+      <input type="Text" value="" name = "dashboardurl" id ="dashboardurl" style="border: 0ch;color: black;"/>
+
       </form>
       <p onclick="unpw()">Click here to know username and password. </p>
       <footer>
         <ul class="nospace inline pushright">
-          <li><a class="btn" href="#" onclick="validateform()">Login</a></li>
-          <li><a class="btn inverse" href="#">Forgot</a></li>
+          <li><a class="btn" href="#" id="btnDashbard">Login</a></li>
+          <li><a class="btn inverse"  href="#" onclick="">Forgot</a></li>
         </ul>
       </footer>
-    </article>
-    <!-- ################################################################################################ -->
+    </div>
+    <div id = "dashboardContainer">
+    <h5>Quicksight report comes here</h5>
+    <div id="innerHTMLDB" style="width: 800px;height:100%;">
+     
+    </div>
   </div>
-  <!-- ################################################################################################ -->
+
+  </div>
 </div>
 <div class="wrapper row1">
   <section id="ctdetails" class="hoc clear"> 
-    <!-- ################################################################################################ -->
     <ul class="nospace clear">
       <li class="one_quarter first">
         <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (000) 000 0000</span></div>
@@ -115,23 +130,15 @@ Licence URI: https://www.os-templates.com/template-terms
         <div class="block clear"><a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span></div>
       </li>
     </ul>
-    <!-- ################################################################################################ -->
   </section>
 </div>
-
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
-    <!-- ################################################################################################ -->
     <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved </p>
     <p class="fl_right"><a target="_blank" href="#" title="Contact Us">Contact Us</a></p>
-    <!-- ################################################################################################ -->
   </div>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
