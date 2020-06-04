@@ -47,7 +47,7 @@ Licence URI: https://www.os-templates.com/template-terms
 
     var containerDiv = document.getElementById("dashboardContainer");
     
-    /*var params = {
+    var params = {
         'AwsAccountId': "387973411303",
         'DashboardId': "99d88e73-2057-402b-b6a4-22ee97284778",
         'IdentityType': "IAM",
@@ -56,13 +56,14 @@ Licence URI: https://www.os-templates.com/template-terms
         'UndoRedoDisabled': false,
         'UserArn' : "arn:aws:quicksight:us-east-1:387973411303:user/default/Cognito_userIdentityPoolNacuboPOC2020Auth_Role/Santhosh"
     }
-    quicksight.getDashboardEmbedUrl(params,function (err, data) {
+    QuickSightEmbedding.getDashboardEmbedUrl(params,function (err, data) {
         if (!err) {
             alert(data);
         } else {
           alert(err);
           }
-      });*/
+      });
+      
 
      var options = {
        url: "https://us-east-2.quicksight.aws.amazon.com/embed/070aa0c681e142e68eede177743a73d3/dashboards/99d88e73-2057-402b-b6a4-22ee97284778?isauthcode=true&identityprovider=quicksight&code=AYABeC_ZnIYiTpajM-nJ_SQKBA0AAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTI6MjU5MzgxNDUwNDA2OmtleS8xZGQ4NmNiNy01MmE3LTQxMTItYTEyOC0zNTYzMzU0ODViZTkAuAECAQB4fn00NTgM2C_LHJYxsyNx1SjomNWwWVp51GMnAbdj9cMB-9tzqURqIDy8nficv_8UJwAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDLQhAA5RR6Dg9QwAbwIBEIA7-_XtZmv1X7HB9CYg9ih_vEiByRNna0aGjvbcFWVBPGO_NtD42yBQAv3nPzYgOZP--OM3PLCTXwvwPBwCAAAAAAwAABAAAAAAAAAAAAAAAAAAA9bR7ldryAzhFDt2ByN_eP____8AAAABAAAAAAAAAAAAAAABAAAAmxEIYCXLHBKCIYXpBAoyD-N4lvLHuODksqINMSkNSYpXRFrbL4n_FUnuDpiJ9yur01dZvuqq86Rx5C0lg3wltP_cRFpEKveEvLGTA_ONEb8krQ48kgoNjrEAauLIi8fHjosNZiIp6nKE2m4MQZro4wv-VSiuxI_C1TSWhWZvQK9a4BxnqJIF50vUPHQPoSGirRD_FnQ5wwtaIMSkpFMjuD5gVKrlNh_48gbn4g%3D%3D" ,
