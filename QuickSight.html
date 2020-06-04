@@ -30,10 +30,13 @@ Licence URI: https://www.os-templates.com/template-terms
     //const AWS = require('aws-sdk');
     //const https = require('https');
     
-    var quicksight = new AWS.Service({
+    /*var quicksight = new AWS.Service({
       apiConfig : require('scripts/quicksight-embedding-js-sdk.min.js'),
       region: 'us-east-2'
-    });
+    });*/
+
+    var quicksight = new AWS.QuickSight();
+
     var containerDiv = document.getElementById("dashboardContainer");
     
     var params = {
