@@ -27,10 +27,9 @@ Licence URI: https://www.os-templates.com/template-terms
   }
   function embedDashboard()
   {
-    const AWS = require('aws-sdk');
-    const https = require('https');
-    alert(AWS);
-
+    //const AWS = require('aws-sdk');
+    //const https = require('https');
+    
     var quicksight = new AWS.Service({
       apiConfig : require('scripts/quicksight-embedding-js-sdk.min.js'),
       region: 'us-east-2'
